@@ -1,4 +1,24 @@
 // Is this working?
+
+// Variables
+
+@white: #FBFBFB;
+@darkblue: #0C486B;
+@darkerblue: #013F64;
+@my-font: 'Roboto Condensed', sans-serif;
+@grey: #909090;
+@darkgrey: #878C8C;
+
+// Mixin
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.bottom-spacer {
+	padding-bottom: 20px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -20,7 +40,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -50,10 +70,175 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box; 
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
 }
+
+.container {
+	width: 100%;
+	background-color: @white;
+	font-size: 1.6rem;
+	height: 100%;
+	font-family: @my-font;
+	line-height: 1.3;
+	
+	h1 {
+		font-size: 4rem;
+		font-weight: bolder;
+		text-transform: uppercase;
+		color: @darkerblue;
+	}
+	
+	header, section, footer {
+		display: flex;
+		width: 100%;
+
+		h4 {
+			font-weight: bold;
+			font-size: 1.4rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+		}
+
+		.entry {
+			.bottom-spacer();
+		}
+
+		.left {
+			width: 30%;
+			background-color: @darkblue;
+			color: @white;
+			.flex-column();
+			align-items: flex-end;
+			justify-content: flex-start;
+			padding-right: 2%;
+			text-align: right;
+			min-width: 200px;
+
+			h4 {
+				font-weight: normal;
+			}
+			
+			
+			.accent {
+				display: block;
+				background-color: @white;
+				height: 15px;
+				width: 20%;
+				margin-bottom: 20px;
+				margin-top: 15px;
+			}
+
+		}
+		.right {
+			width: 70%;
+			margin-left: 2%;
+			color: @grey;
+			max-width: 600px;
+
+			h3 {
+				text-transform: uppercase;
+			}
+
+			h2 {
+				margin-bottom: 9px;
+				color: @darkerblue;
+				font-size: 2rem;
+				text-transform: uppercase;
+				font-weight: bolder;
+			}
+			
+		}
+	} // End of header, section, footer
+
+	header {
+
+		.left, .right {
+			
+			padding-bottom: 40px;
+		}
+		.left {
+			padding-top: 5%;
+			.logo {
+				font-size: 8rem;
+				font-weight: bolder;
+			}
+		}
+		.right {
+			nav {
+				width: 100%;
+				padding-bottom: 2%;
+
+				@media (max-width: 500px) {
+					.flex-column();
+
+				}
+
+				a {
+					display: inline-block;
+					width: 20%;
+					text-decoration: none;
+					color: @darkblue;
+					text-align: center;
+					border-bottom: 5px solid @darkblue;
+				}
+			}
+		}
+		
+	}
+
+	section {
+		.left, .right {
+			.bottom-spacer();
+		}
+	}
+
+	 .experience {
+	 	.left, .right {
+	 		.one {
+				 flex-grow: 10;
+			 }
+			 .two {
+				 flex-grow: 1;
+			 }
+		 }
+		 .left {
+			 .one {
+				 //padding-bottom: 30px;
+				// margin-bottom: 0;
+			 }
+		 }
+	 }
+
+	footer {
+
+		li, address {
+			font-size: 1.2rem;
+		}
+
+
+		.col2 {
+			display: flex;
+
+			@media (max-width: 500px) {
+				.flex-column();
+			}
+			.entry {
+				width: 50%;
+
+				@media (max-width: 500px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+} // End of container
+
+
 

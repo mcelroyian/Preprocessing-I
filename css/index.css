@@ -1,1 +1,292 @@
-/* Compile your LESS file! */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-spacer {
+  padding-bottom: 20px;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.container {
+  width: 100%;
+  background-color: #FBFBFB;
+  font-size: 1.6rem;
+  height: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.3;
+}
+.container h1 {
+  font-size: 4rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #013F64;
+}
+.container header,
+.container section,
+.container footer {
+  display: flex;
+  width: 100%;
+}
+.container header h4,
+.container section h4,
+.container footer h4 {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.container header p,
+.container section p,
+.container footer p {
+  font-size: 1.2rem;
+}
+.container header .entry,
+.container section .entry,
+.container footer .entry {
+  padding-bottom: 20px;
+}
+.container header .left,
+.container section .left,
+.container footer .left {
+  width: 30%;
+  background-color: #0C486B;
+  color: #FBFBFB;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-right: 2%;
+  text-align: right;
+  min-width: 200px;
+}
+.container header .left h4,
+.container section .left h4,
+.container footer .left h4 {
+  font-weight: normal;
+}
+.container header .left .accent,
+.container section .left .accent,
+.container footer .left .accent {
+  display: block;
+  background-color: #FBFBFB;
+  height: 15px;
+  width: 20%;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.container header .right,
+.container section .right,
+.container footer .right {
+  width: 70%;
+  margin-left: 2%;
+  color: #909090;
+  max-width: 600px;
+}
+.container header .right h3,
+.container section .right h3,
+.container footer .right h3 {
+  text-transform: uppercase;
+}
+.container header .right h2,
+.container section .right h2,
+.container footer .right h2 {
+  margin-bottom: 9px;
+  color: #013F64;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.container header .left,
+.container header .right {
+  padding-bottom: 40px;
+}
+.container header .left {
+  padding-top: 5%;
+}
+.container header .left .logo {
+  font-size: 8rem;
+  font-weight: bolder;
+}
+.container header .right nav {
+  width: 100%;
+  padding-bottom: 2%;
+}
+@media (max-width: 500px) {
+  .container header .right nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container header .right nav a {
+  display: inline-block;
+  width: 20%;
+  text-decoration: none;
+  color: #0C486B;
+  text-align: center;
+  border-bottom: 5px solid #0C486B;
+}
+.container section .left,
+.container section .right {
+  padding-bottom: 20px;
+}
+.container .experience .left .one,
+.container .experience .right .one {
+  flex-grow: 10;
+}
+.container .experience .left .two,
+.container .experience .right .two {
+  flex-grow: 1;
+}
+.container footer li,
+.container footer address {
+  font-size: 1.2rem;
+}
+.container footer .col2 {
+  display: flex;
+}
+@media (max-width: 500px) {
+  .container footer .col2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container footer .col2 .entry {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .container footer .col2 .entry {
+    width: 100%;
+  }
+}
