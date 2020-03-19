@@ -9,6 +9,16 @@
 @grey: #909090;
 @darkgrey: #878C8C;
 
+// Mixin
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.bottom-spacer {
+	padding-bottom: 20px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -97,16 +107,16 @@ html, body {
 		}
 
 		.entry {
-			padding-bottom: 20px;
+			.bottom-spacer();
 		}
 
 		.left {
 			width: 30%;
 			background-color: @darkblue;
 			color: @white;
-			display: flex;
-			flex-direction: column;
+			.flex-column();
 			align-items: flex-end;
+			justify-content: flex-start;
 			padding-right: 2%;
 			text-align: right;
 			min-width: 200px;
@@ -150,13 +160,34 @@ html, body {
 	header {
 
 		.left, .right {
-			padding-top: 5%;
+			
 			padding-bottom: 40px;
 		}
 		.left {
+			padding-top: 5%;
 			.logo {
 				font-size: 8rem;
 				font-weight: bolder;
+			}
+		}
+		.right {
+			nav {
+				width: 100%;
+				padding-bottom: 2%;
+
+				@media (max-width: 500px) {
+					.flex-column();
+
+				}
+
+				a {
+					display: inline-block;
+					width: 20%;
+					text-decoration: none;
+					color: @darkblue;
+					text-align: center;
+					border-bottom: 5px solid @darkblue;
+				}
 			}
 		}
 		
@@ -164,15 +195,26 @@ html, body {
 
 	section {
 		.left, .right {
-			padding-bottom: 20px;
+			.bottom-spacer();
 		}
 	}
 
-	.experience {
-		.left {
-			justify-content: space-between;
-		}
-	}
+	 .experience {
+	 	.left, .right {
+	 		.one {
+				 flex-grow: 10;
+			 }
+			 .two {
+				 flex-grow: 1;
+			 }
+		 }
+		 .left {
+			 .one {
+				 //padding-bottom: 30px;
+				// margin-bottom: 0;
+			 }
+		 }
+	 }
 
 	footer {
 
@@ -185,7 +227,7 @@ html, body {
 			display: flex;
 
 			@media (max-width: 500px) {
-				flex-direction: column;
+				.flex-column();
 			}
 			.entry {
 				width: 50%;

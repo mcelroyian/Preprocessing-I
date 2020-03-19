@@ -1,3 +1,10 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-spacer {
+  padding-bottom: 20px;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -179,6 +186,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: flex-start;
   padding-right: 2%;
   text-align: right;
   min-width: 200px;
@@ -222,19 +230,44 @@ body {
 }
 .container header .left,
 .container header .right {
-  padding-top: 5%;
   padding-bottom: 40px;
+}
+.container header .left {
+  padding-top: 5%;
 }
 .container header .left .logo {
   font-size: 8rem;
   font-weight: bolder;
 }
+.container header .right nav {
+  width: 100%;
+  padding-bottom: 2%;
+}
+@media (max-width: 500px) {
+  .container header .right nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container header .right nav a {
+  display: inline-block;
+  width: 20%;
+  text-decoration: none;
+  color: #0C486B;
+  text-align: center;
+  border-bottom: 5px solid #0C486B;
+}
 .container section .left,
 .container section .right {
   padding-bottom: 20px;
 }
-.container .experience .left {
-  justify-content: space-between;
+.container .experience .left .one,
+.container .experience .right .one {
+  flex-grow: 10;
+}
+.container .experience .left .two,
+.container .experience .right .two {
+  flex-grow: 1;
 }
 .container footer li,
 .container footer address {
@@ -245,6 +278,7 @@ body {
 }
 @media (max-width: 500px) {
   .container footer .col2 {
+    display: flex;
     flex-direction: column;
   }
 }
